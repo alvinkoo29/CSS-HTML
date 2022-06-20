@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first website</title>
+    <link rel="stylesheet" href="css/first-css.css">
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <h3>Looking for your food now...</h3>
+    </div>
+    <div class = "hero-bg">
+        <header>
+            <nav>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Contact me</a></li>
+                        <li><a href="">Affiliate links</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section class ="top">
+            <h1>Welcome</h1>
+            <p>This is the first webpage I created. It was made with <span style = "font-style: italic; color:rgb(8, 11, 235)">HTML, CSS</span>, and a bit of <span style = "font-style: italic; color:rgb(8, 11, 235)">javascript</span>.</p>
+
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                        <label for="city details">Enter your city:</label>
+                        <input type="text" name = "city" id = "city details">
+                        <p>Example: "Johor Bahru"</p>
+                    </div>
+
+                    <input type="button" value="Find food" id = "cta-btn">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <section class="bottom">
+        <div class="right-col">
+            <h2>Simple. Delicious.</h2>
+            <p><span>One of my favourite foods. Versatile and convenient. There is nothing like the humble fried rice.</p>
+        </div>
+        <img src="images/food.jpg" alt="Picture of a fried rice">
+    </section>
+
+    <script>
+
+        let findFoodButton = document.getElementById('cta-btn');
+        let overlay = document.getElementById('overlay');
+
+        findFoodButton.addEventListener('click', () =>{
+            overlay.style.display = 'grid';
+            overlay.classList.add('animate-overlay');
+            setTimeout(function () {
+                overlay.classList.remove('animate-overlay');
+                overlay.style.display = 'none'; // display is reset here because if left outside, it will execute first
+            }, 1000);
+        })
+    </script>
+</body>
+</html>
+
+
+
+
